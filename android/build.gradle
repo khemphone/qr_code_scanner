@@ -25,14 +25,11 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+
 android {
-
-    compileSdk 33
+    compileSdkVersion 33
+    namespace 'net.touchcapture.qr.scan' // Use the appropriate namespace here
     
-    // Add the namespace to match the AndroidManifest.xml package
-    //namespace 'net.touchcapture.qr.flutterqr'
-    namespace 'net.touchcapture.qr.scan' 
-
     defaultConfig {
         minSdkVersion 20
         targetSdkVersion 33
@@ -53,12 +50,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    
-    // Remove the redundant namespace check as it's already declared
-    // if (project.android.hasProperty('namespace')) {
-    //     namespace 'net.touchcapture.qr.flutterqr'
-    // }
 }
+
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
